@@ -29,7 +29,7 @@ $(function () {
             username: $('#form_reg [name="username"]').val(),
             password: $('#form_reg [name="password"]').val()
         }
-        $.post('http://api-breakingnews-web.itheima.net/api/reguser',data,function(res){
+        $.post('/api/reguser',data,function(res){
             if (res.status !== 0) {
                layer.msg(res.message)
             } else {
@@ -44,7 +44,7 @@ $(function () {
         e.preventDefault()
         $.ajax({
             method:'POST',
-            url:'http://api-breakingnews-web.itheima.net/api/login',
+            url:'/api/login',
             data:$(this).serialize(),
             success:function(res){
                 if (res.status !==0) {
